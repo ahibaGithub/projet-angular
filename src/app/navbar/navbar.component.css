@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar{
+    font: white;
+    /* background: linear-gradient(90deg, rgb(3, 65, 65) 0% , rgb(34, 161, 184) 100%) */
+    background: rgb(30, 55, 75);
+    
+  }

@@ -7,10 +7,21 @@ export class AuthService {
   loggedIn = false;
 
   constructor() { }
-
-  logIn() {
-    // devrait prendre un login et un password en paramètres...
-    this.loggedIn = true;
+ admins: Array<{username: string,password: string}> =[
+   {username:'ahiba' , password:"0000"},
+   {username:'coulibaly',password:"1234"}
+ ]
+ 
+  logIn(username: string  , password: string) {
+   for (let i = 0; i<this.admins.length; i++){
+     if(this.admins[i].username == username &&  this.admins[i].password == password){
+       this.loggedIn = true;
+     }
+     else{
+       this.loggedIn = false;
+     }
+   }
+  
   }
 
   logOut() {

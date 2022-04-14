@@ -1,85 +1,290 @@
+<app-navbar> </app-navbar>
+
+
+  <mat-drawer-container >
+    <mat-drawer mode="side" opened="true">
+      <app-sidebar>
+  
+      </app-sidebar>
+  </mat-drawer>
+    <mat-drawer-content>
+     
 <main class="container">
-  <div class="ajouterBtn">
-    <a routerLink="/add">
-      <button mat-flat-button color="accent">
-        Ajouter assignment
-      </button>
-    </a>
-  </div>
-  <div>
-<label>Nb assignments par page :</label>
-<input type="range" min=5 max="100"  [(ngModel)]="limit"
-       (change)="getAssignments()"> {{limit}}
+
+  <div class="cont">
+    <div class="row">
+      <!-- Start col -->
+      <div class="col-lg-12 col-xl-6 " >
+          <div >
+              <div class="card-body">
+                  <div class="media">
+                      <div class="media-body">
+                        <div class="pagination">
+                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="premierePage()" [disabled]="page===1">Première Page</button>
+                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page Précédente</button>
+                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="dernierePage()"
+                                  [disabled]="page===totalPages"
+                          >
+                              Dernière Page
+                        </button>
+                        
+                        </div>                                                           
+                      </div>
+                  </div>
+              </div>
+          </div>            
       </div>
-<div class="pagination">
-  <button mat-stroked-button color="basic" (click)="premierePage()" [disabled]="page===1">Première Page</button>
-  <button mat-stroked-button color="basic" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page Précédente</button>
-  <button mat-stroked-button color="basic" (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
-  <button mat-stroked-button color="basic" (click)="dernierePage()"
-          [disabled]="page===totalPages"
-  >
-      Dernière Page
-</button>
-</div>
-<p>Nombre de page total : {{totalPages}},
+      <!-- End col --> 
+      <!-- Start col -->
+      <!-- <div class="col-lg-6 col-xl-3">
+          <div class="card m-b-30">
+              <div class="card-body">
+                  <div class="media">
+                      <div class="media-body">
+                          <h5 class="mb-2">Ethereum</h5> 
+                          <p class="mb-0">1 ETC = 5.69 USD</p>                                                             
+                      </div>
+                  </div>
+              </div>
+          </div>            
+      </div> -->
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-lg-4 col-xl-3">
+          <div >
+              <div class="card-body">
+                  <div class="media">
+                      <div class="media-body">
+                                                                                   
+                      </div>
+                  </div>
+              </div>
+          </div>            
+      </div>
+      <!-- End col --> 
+      <!-- Start col -->
+      <div class="col-lg-8 col-xl-3">
+          <div >
+              <div class="card-body">
+                  <div class="media">
+                      <div class="media-body">
+                        <div   class="slidecontainer">
+                          
+                          <div class="input-group">  
+                           
+                            <input class="slider" id="myrange" type="range" min=5 max="100"  [(ngModel)]="limit"
+                            (change)="getAssignments()">
+                            <div>
+                              <div  id="btnGroupAddon2" hidden>{{limit}}</div>
+                            </div>
+                        <div > 
+                          <p margin-left="200px" class="text-secondary"> assignments par page :    {{limit}}</p> 
+                        </div>
+                           
+                          </div>
+                          <!-- <input type="range" min=5 max="100"  [(ngModel)]="limit"
+                          (change)="getAssignments()">{{limit}} -->
+                        </div>
+                                                                                  
+                      </div>
+                  </div>
+              </div>
+          </div>            
+      </div>
+      <!-- End col --> 
+  </div>
+
+      </div>
+
+      <p class="text-secondary">Nombre de page total : {{totalPages}},
+        Nombre d'assignments : {{totalDocs}},
+        Page courante : {{page}},
+        Nb d'assignments par page : {{limit}}</p>
+        
+      <!-- <div class="row align-items-center">
+            <div class="btn-toolbar justify-content-between">
+       
+       <div class="col-md-8 col-lg-8">
+        <div class="pagination">
+          <button class="btn btn-info" mat-stroked-button color="basic" (click)="premierePage()" [disabled]="page===1">Première Page</button>
+          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page Précédente</button>
+          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+          <button class="btn btn-info" mat-stroked-button color="basic" (click)="dernierePage()"
+                  [disabled]="page===totalPages"
+          >
+              Dernière Page
+        </button>
+        
+        </div>
+       </div>
+       <div class="col-md-4 col-lg-4">
+        <div class= "widgetbar" >
+          <div class= "widgetbar">
+            <div > <label class="form-label">  <p class="text-secondary"> assignments par page</p>  </label> 
+             <div class="input-group">  
+               <input type="range" min=5 max="100"  [(ngModel)]="limit"
+               (change)="getAssignments()">
+               <div class="input-group-prepend">
+                 <div class="input-group-text" id="btnGroupAddon2">{{limit}}</div>
+               </div>
+             </div> -->
+             <!-- <input type="range" min=5 max="100"  [(ngModel)]="limit"
+             (change)="getAssignments()">{{limit}} -->
+           <!-- </div>
+           
+        
+          </div>
+         
+        
+        </div>
+       </div>
+     
+      
+        
+      
+     </div> -->
+
+<!-- <p class="text-secondary">Nombre de page total : {{totalPages}},
 Nombre d'assignments : {{totalDocs}},
 Page courante : {{page}},
 Nb d'assignments par page : {{limit}}</p>
 
-<table mat-table [dataSource]="assignments" class="mat-elevation-z8">
+      </div> -->
+ 
+<table mat-table [dataSource]="assignments" class="table table-striped table-hover">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
          <!-- id Column -->
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <th mat-header-cell *matHeaderCellDef class="table-active"> Id </th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
   <!-- Nom Column -->
   <ng-container matColumnDef="nom">
-    <th mat-header-cell *matHeaderCellDef> Nom </th>
+    <th mat-header-cell *matHeaderCellDef class="table-active"> Nom </th>
     <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
   </ng-container>
 
 
   <!-- date de rendu Column -->
   <ng-container matColumnDef="dateDeRendu">
-    <th mat-header-cell *matHeaderCellDef> Date de rendu </th>
+    <th mat-header-cell *matHeaderCellDef class="table-active"> Date de rendu </th>
     <td mat-cell *matCellDef="let element"> {{element.dateDeRendu | date}} </td>
   </ng-container>
 
   <!-- Rendu Column -->
   <ng-container matColumnDef="rendu">
-    <th mat-header-cell *matHeaderCellDef> Rendu </th>
+    <th mat-header-cell *matHeaderCellDef class="table-active"> Rendu </th>
     <td mat-cell *matCellDef="let element"> {{element.rendu}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+<div class="col-lg-12">
+  <div class="card m-b-30">
+      <div class="card-header">                                
+          <div class="row align-items-center">
+              <div class="col-6">
+                  <h5 class="card-title mb-0">Assigments</h5>
+              </div>
+         
+          </div>
+      </div>
+      <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-borderless">
+             
+              <tbody>
+                <mat-list *ngFor="let assignment of assignments; let i=index" >
+                 <a routerLink="/assignment/{{assignment.id}}"> 
+                   <tr>
+                    <td><svg class="bi bi-chevron-right" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"></svg></td>
+                    <td>{{assignment.dateDeRendu | date}}</td>
+              
+                    <td> <mat-list-item >
+                      <p *ngIf="assignment.rendu; else nonsoumis" appRendu>
+                        {{assignment.nom}} a été rendu. 
+                      </p>
+            
+                      <ng-template #nonsoumis>
+                        <p >{{assignment.nom}} n'a pas été rendu !</p>  
+                      </ng-template>
+                    
+                    </mat-list-item></td>
+                    
+                  
+                 
+                
+                 
+                    
+                </tr></a>
+                </mat-list>
+               
+           
+              </tbody>
+          </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <ol class="list-group ">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+    
+      <mat-list *ngFor="let assignment of assignments; let i=index" >
+        <nav>
+          <a routerLink="/assignment/{{assignment.id}}" >
+            <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
+            <mat-list-item >
+              <p *ngIf="assignment.rendu; else nonsoumis" appRendu>
+                {{assignment.nom}} a été rendu.  <mat-icon class=" align-items-end">edit</mat-icon>
+              </p>
+    
+              <ng-template #nonsoumis>
+                <p >{{assignment.nom}} n'a pas été rendu !</p>  <mat-icon>edit</mat-icon>
+              </ng-template>
+              <mat-divider></mat-divider>
+            </mat-list-item>
+    
+          </a>
+        </nav>
+      </mat-list>
+    </div>
+   
+  </li>
+ 
+</ol> -->
 
 
 
 
 
-
-  <mat-list *ngFor="let assignment of assignments; let i=index">
-    <nav>
-      <a routerLink="/assignment/{{assignment.id}}">
+  <!-- <mat-list *ngFor="let assignment of assignments; let i=index" >
+    <nav class="list-group-item list-group-item-secondary">
+      <a routerLink="/assignment/{{assignment.id}}" >
         <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
-        <mat-list-item>
+        <mat-list-item >
           <p *ngIf="assignment.rendu; else nonsoumis" appRendu>
             {{assignment.nom}} a été rendu.
           </p>
 
           <ng-template #nonsoumis>
-            <p>{{assignment.nom}} n'a pas été rendu !</p>
+            <p class="element">{{assignment.nom}} n'a pas été rendu !</p>
           </ng-template>
           <mat-divider></mat-divider>
         </mat-list-item>
+
       </a>
     </nav>
-  </mat-list>
+  </mat-list> -->
 </main>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

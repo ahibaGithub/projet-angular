@@ -1,4 +1,8 @@
-.rendu
+
+.cont{
+  padding-top: 5%;
+}
+/* .rendu
 {
   color:green;
 }
@@ -34,8 +38,201 @@
   padding-left: -10px;
   font-size: 20px;
   color:orange;
-}
+}*/
 
 .mat-row:hover .mat-cell {
   border-color: currentColor;
+} 
+/* .element
+{ 
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0; 
+}  */
+mat-list-item.p{
+  text-decoration: none;
+}
+p{
+  text-decoration: none;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #265301;
+}
+.table-responsive[data-pattern=priority-columns] {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+.table {
+  margin-bottom: 10px;
+  color: #263a5b;
+ 
+}
+.table th {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 0.7rem;
+}
+.table td {
+  color: #8A98AC;
+  vertical-align: middle;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 0.6rem;
+  
+}
+
+
+
+
+
+.table-dark td {
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #8A98AC;
+}
+.table-dark th {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+.table-dark thead th {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+.table-dark.table-hover tbody tr:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-borderless tbody + tbody {
+  border: 0 !important;
+}
+.table-borderless td {
+  border: 0 !important;
+}
+.table-borderless th {
+  border: 0 !important;
+}
+.table-borderless thead th {
+  border: 0 !important;
+}
+
+.table-primary {
+  background-color: rgba(0, 128, 255, 0.1);
+}
+.table-primary > td {
+  background-color: rgba(0, 128, 255, 0.1);
+  color: #0080ff;
+}
+.table-primary > th {
+  background-color: rgba(0, 128, 255, 0.1);
+  color: #0080ff;
+}
+
+
+mat-toolbar{
+  background: #002bc5;
+  color: white;
+}
+
+mat-sidenav{
+  margin:16px;
+  width:200px;
+  border-right: none;
+  background-color: #091541 ;
+  color: white;
+  border-radius :10px;
+  padding: 16px;
+  text-align:center;
+}
+mat-drawer-content{
+  margin-left: 300px;
+  padding: 50px;
+}
+.content{
+  height: calc(100vh -98px);
+  margin: 16px;
+  margin-left: 32px;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  font-size : 2rem;
+  color : lightgray;
+  border-radius:10px;
+}
+mat-sidenav-container{
+  height: calc(100vh - 65px);
+
+}
+:host{
+  display:flex;
+  flex-direction: column;
+  height:100%;
+
+
+}
+mat-drawer{
+  width:260px;
+
+  /* background: hsla(205,46% ,30%,1);
+  background: linear-gradient(90deg, rgb(43, 41, 139) 0% , rgb(42, 131, 158) 100%) */
+  background:rgb(30, 55, 75);
+  box-shadow: 20%;
+}
+mat-drawer-container{
+  height: 100%;
+  background:rgb(15, 31, 44)
+  
+}
+mat-sidenav-content{
+  margin-top:50%;
+  padding:100%;
+  margin: 300px;
+}
+
+.slidecontainer {
+  width: 70%; /* Width of the outside container */
+
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  margin-bottom:10px
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  border-radius: 20px;
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #1bcbd8; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+ 
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+
 }

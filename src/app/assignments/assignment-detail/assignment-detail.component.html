@@ -1,14 +1,54 @@
-<h3>Dans le detail</h3>
-<mat-card *ngIf="assignmentTransmis">
-  <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
-  <mat-card-subtitle>{{assignmentTransmis?.dateDeRendu | date}}</mat-card-subtitle>
-  <div id="bottom">
-    <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
-      Rendu
-    </mat-checkbox>
+<app-navbar> </app-navbar>
 
-    <button mat-raised-button color="primary" [disabled]="!isAdmin()" (click)="onClickEdit()">EDIT</button>
 
-    <button mat-flat-button color="warn" [disabled]="!isAdmin()" (click)="onDeleteAssignment()">DELETE</button>
-  </div>
-</mat-card>
+  <mat-drawer-container >
+    <mat-drawer mode="side" opened="true">
+      <app-sidebar>
+  
+      </app-sidebar>
+  </mat-drawer>
+    <mat-drawer-content>
+      <div class="container">
+        <div class="row align-items-start">
+          <div class="col">
+      
+          </div>
+          <div class="col">
+      
+          </div>
+          <div class="col">
+          
+          </div>
+        </div>
+      <div class="row align-items-center h-100" width="40px">
+        <div class="col">
+          
+        </div>
+        <div class="col-8" >
+       
+          <mat-card *ngIf="assignmentTransmis" class="shadow p-3 mb-5 bg-white rounded">
+            <h3>details de l'Assignment</h3>
+            <img src="assets/images/prof.png" class="rounded-circle z-depth-2"   data-holder-rendered="true"/>
+            <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
+            <mat-card-subtitle>{{assignmentTransmis?.dateDeRendu | date}}</mat-card-subtitle>
+            <div id="bottom">
+              <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
+                Rendu
+              </mat-checkbox>
+          
+              <button mat-raised-button color="warn" [disabled]="!isAdmin()" (click)="onClickEdit()"><mat-icon class="icon-edit">edit</mat-icon></button>
+          
+              <button class="bout" mat-flat-button color="warn" [disabled]="!isAdmin()" (click)="onDeleteAssignment()"><mat-icon class="icon-del">delete</mat-icon></button>
+            </div>
+          </mat-card>
+          
+        </div>
+        <div class="col">
+          
+        </div>
+      </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -23,15 +23,31 @@ import { AssignmentsComponent } from './assignments/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
 import { AssignmentDetailComponent } from './assignments/assignment-detail/assignment-detail.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
-
+import { SidebarModule } from 'ng-sidebar';
 // Pour le router
 import { Routes, RouterModule } from '@angular/router';
 import { EditAssignmentComponent } from './edit-assignment/edit-assignment.component';
 import { AuthGuard } from './shared/auth.guard';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { LoginComponent } from './login/login.component';
+import {FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes:Routes = [
   {
     path: "",
+    component:LoginComponent,
+  },
+  {
+    path: "login",
+    component:LoginComponent,
+  },
+  {
+    path: "Assignment",
     component:AssignmentsComponent,
   },
   {
@@ -49,7 +65,7 @@ const routes:Routes = [
   {
     path: "assignment/:id/edit",
     component:EditAssignmentComponent,
-    canActivate:[AuthGuard]
+  //  canActivate:[AuthGuard]
   }
 ]
 @NgModule({
@@ -59,7 +75,10 @@ const routes:Routes = [
     RenduDirective,
     AssignmentDetailComponent,
     AddAssignmentComponent,
-    EditAssignmentComponent
+    EditAssignmentComponent,
+    SidebarComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -68,9 +87,16 @@ const routes:Routes = [
     FormsModule, MatInputModule, MatFormFieldModule, MatDatepickerModule,
     MatListModule, MatCardModule, MatCheckboxModule, MatTableModule,
     MatNativeDateModule, MatSlideToggleModule, HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes), 
+    SidebarModule.forRoot(), LayoutModule, MatToolbarModule, MatSidenavModule,FlexLayoutModule,ReactiveFormsModule,
+    
+
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

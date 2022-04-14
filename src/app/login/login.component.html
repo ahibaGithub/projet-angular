@@ -1,0 +1,31 @@
+<div class="card" >
+    <div class="text-center">
+        <mat-icon class="center-icon"> person_outline </mat-icon>
+            <form  [formGroup]="loginForm" fxLayoutAlign = "stretch" fxLayout= "column" (ngSubmit)="onSubmit()" >
+                <mat-form-field >
+                  <mat-label>Username</mat-label>
+                  <input matInput placeholder="entrez votre login"  formControlName="username" required >
+                   <mat-error *ngIf="password?.errors?.['required']">
+                      Veuillez entrer votre password
+                     </mat-error> 
+                </mat-form-field>
+    
+                <mat-form-field >
+                    <mat-label>password</mat-label>
+                    <input matInput placeholder="entrez votre login" type="password"  formControlName="password" required >
+                    
+                     <mat-error *ngIf="password?.errors?.['required']">
+                      Veuillez entrer votre password
+                    </mat-error> 
+                  </mat-form-field>
+                  <br><br>
+                <button mat-raised-button type="submit" >
+                        Login
+                </button>
+               
+              </form>
+ 
+              
+    </div>
+
+</div>
