@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
+import { AuthService } from 'src/app/shared/auth.service';
 import { Assignment } from '../assignment.model';
 
 @Component({
@@ -14,7 +15,7 @@ export class AddAssignmentComponent implements OnInit {
  dateDeRenduAssignment!:Date;
 
   constructor(private assignmentsService:AssignmentsService,
-              private router:Router) { }
+              private router:Router, public authService:AuthService) { }
 
   ngOnInit(): void {
   }

@@ -10,7 +10,7 @@
      <!-- <a routerLink="/add" mat-list-item >
        <mat-icon>note_add</mat-icon> peuplerBD
      </a> -->
-     <a routerLink="/add" mat-list-item>
-      <mat-icon>assignment</mat-icon> ajouter assignment
+     <a *ngIf="authService.user_session.isAdmin" routerLink="/add" mat-list-item>
+      <mat-icon >assignment</mat-icon> ajouter assignment
     </a>
   </mat-nav-list>

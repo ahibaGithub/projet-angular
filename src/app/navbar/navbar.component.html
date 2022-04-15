@@ -5,7 +5,7 @@
     <a class="navbar-brand" class="link-light" routerLink="/login">
       <form class="container-fluid justify-content-end">
         <div class="row">
-          <div class="col">  <button  class="btn btn-secondary"  mat-raised-button  (click)="peuplerBD()">Peupler bd</button>
+          <div class="col">  <button *ngIf="authService.user_session.isAdmin"  class="btn btn-secondary"  mat-raised-button  (click)="peuplerBD()">Peupler bd</button>
             </div>
             <div class="col"><button  class="btn btn-secondary" type="button">Deconnexion</button></div>
         </div>
