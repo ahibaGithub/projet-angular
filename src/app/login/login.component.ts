@@ -38,9 +38,7 @@ export class LoginComponent implements OnInit {
        if(values == "admin"){
          this.isAdmin = true;
        }
-       else{
-        this.isAdmin = false;
-       }
+      
        this.AuthService.logIn(usernames,passwords,this.isAdmin)
        if(this.AuthService.loggedIn == true){
          this.log =true;
