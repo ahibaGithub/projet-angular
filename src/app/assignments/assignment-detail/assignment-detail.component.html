@@ -43,16 +43,16 @@
               <div class="row">
                
                 <div class="col">
-                  <button mat-raised-button color="warn" [disabled]="!isAdmin()" (click)="onClickEdit()"><mat-icon class="icon-edit">edit</mat-icon></button>
+                  <button mat-raised-button  *ngIf="authService.user_session.isAdmin" color="warn" [disabled]="!isAdmin()" (click)="onClickEdit()"><mat-icon class="icon-edit">edit</mat-icon></button>
                 </div>
                 <div class="col">
-                  <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
+                  <mat-checkbox *ngIf="!assignmentTransmis.rendu && authService.user_session.isAdmin" (click)="onAssignmentRendu()">
                     Rendu
                   </mat-checkbox>
               
                 </div>
                <div class="col">
-                <button class="bout" mat-flat-button color="warn" [disabled]="!isAdmin()" (click)="onDeleteAssignment()"><mat-icon class="icon-del">delete</mat-icon></button>
+                <button class="bout" mat-flat-button color="warn" *ngIf="authService.user_session.isAdmin" [disabled]="!isAdmin()" (click)="onDeleteAssignment()"><mat-icon class="icon-del">delete</mat-icon></button>
                </div>
             
            

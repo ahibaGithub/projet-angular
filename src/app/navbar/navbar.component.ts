@@ -15,14 +15,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login() {
-    if(!this.authService.loggedIn) {
-      // this.authService.logIn();
-    } else {
-      this.authService.logOut();
-      this.router.navigate(["/home"]);
-    }
-  }
+  // login() {
+  //   if(!this.authService.loggedIn) {
+  //     // this.authService.logIn();
+  //   } else {
+  //     this.authService.logOut();
+  //     this.router.navigate(["/home"]);
+  //   }
+  // }
   peuplerBD() {
     this.assignmentsService.peuplerBDAvecForkJoin()
     .subscribe(() => {

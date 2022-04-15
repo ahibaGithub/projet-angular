@@ -18,7 +18,7 @@ export class AssignmentDetailComponent implements OnInit {
   constructor(private assignmentsService: AssignmentsService,
               private route:ActivatedRoute,
               private router:Router,
-              private authService:AuthService) {}
+              public authService:AuthService) {}
 
   ngOnInit(): void {
     // le + force la conversion "string" vers "number"
