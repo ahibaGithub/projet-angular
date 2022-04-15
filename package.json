@@ -13,8 +13,10 @@
   "dependencies": {
     "@angular/animations": "~13.2.0",
     "@angular/cdk": "^13.3.2",
+    "@angular/cli": "~13.2.5",
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
+    "@angular/compiler-cli": "~13.2.0",
     "@angular/core": "~13.2.0",
     "@angular/flex-layout": "^13.0.0-beta.38",
     "@angular/forms": "~13.2.0",
@@ -28,12 +30,11 @@
     "express": "^4.17.3",
     "ng-inline-svg-2": "^14.0.1",
     "ng-sidebar": "^9.4.3",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    " @angular/cli " : " ^11.0.2 " ,
-    " @angular/compiler-cli " : " ^10.0.14 " ,
-    "tapuscrit " : " ~3.9.5 "
+    "typescript": "~4.5.2",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.5",
