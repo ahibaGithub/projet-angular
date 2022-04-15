@@ -3,14 +3,15 @@ import { Router } from '@angular/router';
 import { AssignmentsService } from '../shared/assignments.service';
 import { AuthService } from '../shared/auth.service';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(private authService:AuthService,private assignmentsService:AssignmentsService ,private router:Router, ) { }
+  
+  constructor(private authService:AuthService,private assignmentsService:AssignmentsService ,private router:Router) { }
 
   ngOnInit(): void {
   }

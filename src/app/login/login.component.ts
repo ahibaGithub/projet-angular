@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     verification : boolean = true;
     log : boolean = false;
     isAdmin : boolean = false;
+ 
+  
   loginForm = new FormGroup({
     username: new FormControl('',Validators.required),
     password: new FormControl('',Validators.required),
@@ -42,7 +44,7 @@ export class LoginComponent implements OnInit {
        this.AuthService.logIn(usernames,passwords,this.isAdmin)
        if(this.AuthService.loggedIn == true){
          this.log =true;
-       
+ 
         this.router.navigate(["/home"]);
        }
        else{
