@@ -26,6 +26,18 @@
                       Veuillez entrer votre password
                     </mat-error> 
                   </mat-form-field>
+                   
+                  <mat-form-field appearance="fill" required>
+                    <mat-label>Role</mat-label>
+                    <select matNativeControl formControlName="role" >
+                      <optgroup >
+                        <option value="admin">Admin</option>
+                        <option value="user ">User</option>
+                      </optgroup>
+                     
+                    </select>
+                  </mat-form-field>
+             
                   <br><br>
                 <button mat-raised-button type="submit" >
                         Login

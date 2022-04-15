@@ -7,20 +7,21 @@ export class AuthService {
   loggedIn = false;
 
   constructor() { }
- admins: Array<{username: string,password: string}> =[
-   {username:'ahiba' , password:"0000"},
-   {username:'coulibaly',password:"1234"},
-   {username:'michel' , password:"1111"},
+ admins: Array<{username: string,password: string , isAdmin: Boolean}> =[
+   {username:'ahiba' , password:"0000", isAdmin: true},
+   {username:'coulibaly',password:"1234", isAdmin: false},
+   {username:'michel' , password:"1111" , isAdmin:true},
  ]
  
-  logIn(username: string  , password: string) {
+  logIn(username: string  , password: string , isAdmin:boolean) {
+  
    for (let i = 0; i<this.admins.length; i++){
-     if(this.admins[i].username == username &&  this.admins[i].password == password){
+
+     if(this.admins[i].username == username &&  this.admins[i].password == password && this.admins[i].isAdmin == isAdmin ){
        this.loggedIn = true;
+       break;
      }
-     else{
-       this.loggedIn = false;
-     }
+    
    }
   
   }

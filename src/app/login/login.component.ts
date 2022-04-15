@@ -13,9 +13,11 @@ export class LoginComponent implements OnInit {
   // password="";
     verification : boolean = true;
     log : boolean = false;
+    isAdmin : boolean = false;
   loginForm = new FormGroup({
     username: new FormControl('',Validators.required),
-    password: new FormControl('',Validators.required)
+    password: new FormControl('',Validators.required),
+    role: new FormControl('',Validators.required)
   });
   constructor( private AuthService:AuthService,private router:Router) { }
 
@@ -29,7 +31,15 @@ export class LoginComponent implements OnInit {
      if (this.loginForm.valid == true){
        const usernames = this.loginForm.get('username')?.value;
        const passwords = this.loginForm.get('password')?.value;
-       this.AuthService.logIn(usernames,passwords)
+       const values =  this.loginForm.get('role')?.value;
+       console.log(values)
+       if(values == "admin"){
+         this.isAdmin = true;
+       }
+       else{
+        this.isAdmin = false;
+       }
+       this.AuthService.logIn(usernames,passwords,this.isAdmin)
        if(this.AuthService.loggedIn == true){
          this.log =true;
        
