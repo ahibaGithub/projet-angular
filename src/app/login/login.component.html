@@ -1,7 +1,7 @@
 <div class="card" >
     <div class="text-center">
       <mat-dialog-content *ngIf="!verification"   >
-        <p class="text-danger">Username ou password invalide</p>
+        <p class="text-danger">Username , password ou role invalide</p>
       </mat-dialog-content>
         <mat-icon class="center-icon"> person_outline </mat-icon>
             <form  [formGroup]="loginForm" fxLayoutAlign = "stretch" fxLayout= "column" (ngSubmit)="onSubmit()" >
