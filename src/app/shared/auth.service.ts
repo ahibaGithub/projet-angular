@@ -9,7 +9,8 @@ export class AuthService {
   constructor() { }
  admins: Array<{username: string,password: string}> =[
    {username:'ahiba' , password:"0000"},
-   {username:'coulibaly',password:"1234"}
+   {username:'coulibaly',password:"1234"},
+   {username:'michel' , password:"1111"},
  ]
  
   logIn(username: string  , password: string) {

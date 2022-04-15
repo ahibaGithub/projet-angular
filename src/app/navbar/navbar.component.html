@@ -1,13 +1,30 @@
 <mat-toolbar >
-    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button> -->
+
     <img src="assets/images/logoo.png" height="308" alt="IOICORPORATE">
     <span class="example-spacer"></span>
-    <a  class="link-light" routerLink="/login">
-    <span>deconnexion</span> 
+    <a class="navbar-brand" class="link-light" routerLink="/login">
+      <form class="container-fluid justify-content-end">
+        <div class="row">
+          <div class="col">  <button  class="btn btn-secondary"  mat-raised-button  (click)="peuplerBD()">Peupler bd</button>
+            </div>
+            <div class="col"><button  class="btn btn-secondary" type="button">Deconnexion</button></div>
+        </div>
+       
+      </form>
+    <!-- <span>deconnexion</span>
+ 
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
    <mat-icon>exit_to_app</mat-icon>
-    </button>
+    </button> -->
   </a> 
   </mat-toolbar>
+  <!-- <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Navbar</a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+   -->

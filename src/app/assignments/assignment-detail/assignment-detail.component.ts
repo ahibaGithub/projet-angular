@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import randomInteger from 'random-int';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Assignment } from '../assignment.model';
@@ -10,8 +11,10 @@ import { Assignment } from '../assignment.model';
   styleUrls: ['./assignment-detail.component.css'],
 })
 export class AssignmentDetailComponent implements OnInit {
-  assignmentTransmis?: Assignment;
 
+ 
+  assignmentTransmis?: Assignment;
+  
   constructor(private assignmentsService: AssignmentsService,
               private route:ActivatedRoute,
               private router:Router,

@@ -20,10 +20,10 @@
                   <div class="media">
                       <div class="media-body">
                         <div class="pagination">
-                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="premierePage()" [disabled]="page===1">Première Page</button>
-                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page Précédente</button>
-                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
-                          <button class="btn btn-info" mat-stroked-button color="basic" (click)="dernierePage()"
+                          <button  class="btn btn-secondary" mat-stroked-button color="basic" (click)="premierePage()" [disabled]="page===1">Première Page</button>
+                          <button class="btn btn-secondary" mat-stroked-button color="basic" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page Précédente</button>
+                          <button  class="btn btn-secondary" mat-stroked-button color="basic" (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+                          <button  class="btn btn-secondary" mat-stroked-button color="basic" (click)="dernierePage()"
                                   [disabled]="page===totalPages"
                           >
                               Dernière Page
@@ -102,55 +102,7 @@
         Page courante : {{page}},
         Nb d'assignments par page : {{limit}}</p>
         
-      <!-- <div class="row align-items-center">
-            <div class="btn-toolbar justify-content-between">
-       
-       <div class="col-md-8 col-lg-8">
-        <div class="pagination">
-          <button class="btn btn-info" mat-stroked-button color="basic" (click)="premierePage()" [disabled]="page===1">Première Page</button>
-          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page Précédente</button>
-          <button class="btn btn-info" mat-stroked-button color="basic" (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
-          <button class="btn btn-info" mat-stroked-button color="basic" (click)="dernierePage()"
-                  [disabled]="page===totalPages"
-          >
-              Dernière Page
-        </button>
-        
-        </div>
-       </div>
-       <div class="col-md-4 col-lg-4">
-        <div class= "widgetbar" >
-          <div class= "widgetbar">
-            <div > <label class="form-label">  <p class="text-secondary"> assignments par page</p>  </label> 
-             <div class="input-group">  
-               <input type="range" min=5 max="100"  [(ngModel)]="limit"
-               (change)="getAssignments()">
-               <div class="input-group-prepend">
-                 <div class="input-group-text" id="btnGroupAddon2">{{limit}}</div>
-               </div>
-             </div> -->
-             <!-- <input type="range" min=5 max="100"  [(ngModel)]="limit"
-             (change)="getAssignments()">{{limit}} -->
-           <!-- </div>
-           
-        
-          </div>
-         
-        
-        </div>
-       </div>
      
-      
-        
-      
-     </div> -->
-
-<!-- <p class="text-secondary">Nombre de page total : {{totalPages}},
-Nombre d'assignments : {{totalDocs}},
-Page courante : {{page}},
-Nb d'assignments par page : {{limit}}</p>
-
-      </div> -->
  
 <table mat-table [dataSource]="assignments" class="table table-striped table-hover">
 

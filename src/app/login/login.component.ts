@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 export class LoginComponent implements OnInit {
   //username = "";
   // password="";
+    verification : boolean = true;
     log : boolean = false;
   loginForm = new FormGroup({
     username: new FormControl('',Validators.required),
@@ -31,11 +32,12 @@ export class LoginComponent implements OnInit {
        this.AuthService.logIn(usernames,passwords)
        if(this.AuthService.loggedIn == true){
          this.log =true;
-        console.log("valide : "+this.loginForm.get('username')?.value );
+       
         this.router.navigate(["/home"]);
        }
        else{
-        this.router.navigate(["/login"]);
+          this.verification = false;
+     
        }
        
 

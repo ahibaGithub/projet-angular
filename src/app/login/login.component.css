@@ -20,3 +20,50 @@
     margin-bottom: 20%;
     bottom: 40%;
 }
+
+mat-label{
+    font-size: 20;
+}
+.profilebar a {
+    padding: 15px 8px 5px;
+    border-radius: 3px;
+  }
+  .profilebar a:hover {
+    background-color: rgba(129, 167, 205, 0.1);
+  }
+  .profilebar img {
+    width: 26px;
+    margin-top: -14px;
+  }
+  .profilebar .dropdown-menu {
+    top: 15px !important;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0;
+  }
+  .profilebar .dropdown-menu .dropdown-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  }
+  .profilebar .dropdown-menu .dropdown-item:last-child {
+    border-bottom: none;
+  }
+  .profilebar .dropdown-menu .dropdown-item:hover {
+    background-color: #ffffff;
+  }
+  .profilebar .live-icon {
+    display: none;
+  }
+  
+  .profilename {
+    padding: 5px 0;
+  }
+  .profilename h5 {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #0080ff;
+  }
+  .profilename p {
+    color: #8A98AC;
+    margin-bottom: 0;
+    font-size: 15px;
+  }
